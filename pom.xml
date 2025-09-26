@@ -21,7 +21,14 @@
         </dependency>
     </dependencies>
 
-    <!-- ✅ Add this build section -->
+    <!-- ✅ Add this section here -->
+    <distributionManagement>
+        <repository>
+            <id>internal.repo</id>
+            <url>file://${project.basedir}/target/deploy-repo</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -31,7 +38,6 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <!-- Your main class goes here -->
                             <mainClass>com.example.adder.App</mainClass>
                         </manifest>
                     </archive>
